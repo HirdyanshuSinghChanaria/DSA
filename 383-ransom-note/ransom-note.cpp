@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool canConstruct(string ransomNote, string magazine) {
-        vector<int>mag1(30,0),rans(30,0);
+        vector<int>mag1(26,0),rans(26,0);
         if(magazine.length()<ransomNote.length()) return false;
         for(int i=0;i<magazine.length();i++){
             mag1[magazine[i]-'a']++;
