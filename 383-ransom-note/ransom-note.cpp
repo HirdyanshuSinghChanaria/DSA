@@ -10,7 +10,7 @@ public:
             rans[ransomNote[i]-'a']++;
         }
         for(int i=0;i<26;i++){
-            cout<<i<<" "<<rans[i]<<"\t\t"<<i<<" "<<mag1[i]<<endl;
+            // cout<<i<<" "<<rans[i]<<"\t\t"<<i<<" "<<mag1[i]<<endl;
             if(rans[i]!=0&&rans[i]>mag1[i]){
                 return false;
             }
