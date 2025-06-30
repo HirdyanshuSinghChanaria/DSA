@@ -2,7 +2,7 @@ class Solution {
 public:
     int findLHS(vector<int>& nums) {
         int maxi = 0;
-        map<int, int> mp;
+        unordered_map<int, int> mp;
 
         // Count frequency of each number
         for (int num : nums) {
