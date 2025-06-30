@@ -4,16 +4,13 @@ public:
         int maxi = 0;
         unordered_map<int, int> mp;
 
-        // Count frequency of each number
         for (int num : nums) {
             mp[num]++;
         }
 
-        // Iterate over map and check neighbors
-        for (auto it = mp.begin(); it != mp.end(); ++it) {
-            // Check if next key (it->first + 1) exists
-            if (mp.find(it->first + 1) != mp.end()) {
-                int temp = it->second + mp[it->first + 1];
+        for (auto it: mp) {
+            if (mp.count(it.first + 1)) {
+                int temp = it.second + mp[it.first + 1];
                 maxi = max(maxi, temp);
             }
         }
