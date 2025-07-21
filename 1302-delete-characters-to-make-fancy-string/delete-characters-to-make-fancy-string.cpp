@@ -1,6 +1,9 @@
 class Solution {
 public:
     string makeFancyString(string s) {
+        ios::sync_with_stdio(false);
+        cin.tie(nullptr);
+        cout.tie(nullptr);
         int n=s.length(),count=1,i=0,j=1;
         if(n==1||n==2) return s;
         string ans = string(1, s[0]);
