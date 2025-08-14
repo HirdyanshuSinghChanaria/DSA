@@ -1,6 +1,9 @@
 class Solution {
 public:
     bool isPossibleDivide(vector<int>& nums, int k) {
+        ios_base::sync_with_stdio(false);
+        cin.tie(nullptr);
+        cout.tie(nullptr);
         if (nums.size() % k) return false;
 
         map<int, int> freq;
