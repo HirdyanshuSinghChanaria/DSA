@@ -1,4 +1,3 @@
-//Approach-2 (Using Traditional Sliding Window) - O(n+n)
 class Solution {
 public:
     int longestSubarray(vector<int>& nums) {
