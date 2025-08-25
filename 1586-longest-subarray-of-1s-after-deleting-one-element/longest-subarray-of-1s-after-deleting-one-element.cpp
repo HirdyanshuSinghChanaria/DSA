@@ -1,24 +1,24 @@
+//Approach-2 (Using Traditional Sliding Window) - O(n+n)
 class Solution {
 public:
     int longestSubarray(vector<int>& nums) {
-        if(nums.size()==1) return 0;
-        int n=nums.size(),count,size,ans=0;
-        for(int i=0;i<n;i++){
-            size=0;
-            count=0;
-            for(int j=i;j<n;j++){
-                if(nums[j]==1){
-                    size++;
-                }
-                else{
-                    if(count>0) break;
-                    else size++;
-                    count++;
-                }
+
+        int zeroCount = 0;
+        int longestWindow = 0;
+
+        int i = 0;
+        
+        for (int j = 0; j < nums.size(); j++) {
+            zeroCount += (nums[j] == 0);
+                          
+            while (zeroCount > 1) {
+                zeroCount -= (nums[i] == 0);
+                i++;
             }
-            ans=max(ans,size);
-            // if(count==0) return n-1;
+              
+            longestWindow = max(longestWindow, j - i);
         }
-        return ans-1;
+
+        return longestWindow;
     }
 };
