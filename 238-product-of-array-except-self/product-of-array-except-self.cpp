@@ -11,12 +11,8 @@ public:
         }
         for(int i=0;i<n;i++){
             if(nums[i]!=0) nums[i]=pro/nums[i];
-            else if(nums[i]==0 && count==1){
-               nums[i]=pro0;
-            }
-            else if(nums[i]==0){
-                nums[i]=0;
-            }
+            else if(nums[i]==0 && count==1) nums[i]=pro0;
+            else if(nums[i]==0) nums[i]=0;
         }
         return nums;
     }
