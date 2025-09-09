@@ -16,8 +16,7 @@ public:
         if(root!=NULL){
             lcount=maxDepth(root->left);
             rcount=maxDepth(root->right);
-            if(lcount>rcount) return lcount+1;
-            else return rcount+1;
+            return max(lcount,rcount)+1;
         }
         return 0;
     }
