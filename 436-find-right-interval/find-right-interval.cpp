@@ -1,6 +1,9 @@
 class Solution {
 public:
     vector<int> findRightInterval(vector<vector<int>>& intervals) {
+        ios::sync_with_stdio(false);
+        cin.tie(nullptr);
+        cout.tie(nullptr);
         int n=intervals.size();
         vector<int>ans(n,-1);
         map<int,int>mp;
