@@ -1,6 +1,9 @@
 class Solution {
 public:
     bool ispali(string &s,int i,int j){
+        ios::sync_with_stdio(false);
+        cin.tie(nullptr);
+        cout.tie(nullptr);
         while(i<j){
             if(s[i]!=s[j]) return false;
             i++;j--;
@@ -18,8 +21,6 @@ public:
                 else return false;
                 count=1;
             }
-            // else {cout << i << "=" <<s[i] <<endl<< j << "=" << s[j]; return false;}
-            // i++;j--;
         }
         return true;
     }
