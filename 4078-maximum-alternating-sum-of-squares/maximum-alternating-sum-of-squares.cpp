@@ -9,13 +9,10 @@ public:
         int i=0,j=n-1;
         long long ans=0;
         while(i<j){
-            cout<<nums[j]<<" "<<nums[i]<<endl;
             ans+=(nums[j]*nums[j])-(nums[i]*nums[i]);
             i++;j--;
         }
-        if(i==j){
-            ans+=nums[i]*nums[i];
-        }
+        if(i==j) ans+=nums[i]*nums[i];
         return ans;
     }
 };
