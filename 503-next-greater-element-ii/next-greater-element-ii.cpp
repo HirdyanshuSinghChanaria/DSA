@@ -8,7 +8,6 @@ public:
         vector<int>hash;
         while(!st1.empty()){
             int x = st1.top();
-            cout<<(int)st1.size()<<endl;
             st1.pop();
             if(hash.empty() or hash.back()< x){
                 hash.push_back(x);
