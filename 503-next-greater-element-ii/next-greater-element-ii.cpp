@@ -3,6 +3,7 @@ public:
     vector<int> nextGreaterElements(vector<int>& nums) {
         ios::sync_with_stdio(false);
         cin.tie(nullptr);
+        cout.tie(nullptr);
         stack<int>st;
         int n=nums.size();
         vector<int>ans(n,-1);
