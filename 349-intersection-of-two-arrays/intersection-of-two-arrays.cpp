@@ -1,21 +1,15 @@
 class Solution {
 public:
     vector<int> intersection(vector<int>& nums1, vector<int>& nums2) {
-        // int s1=nums1.size(),s2=nums2.size();
         vector<int> m(1001, 0);
         vector<int> v;
-
-        for (int i = 0; i < nums1.size(); i++) {
-            m[nums1[i]]++;
-        }
-
-        for (int i = 0; i < nums2.size(); i++) {
-            if (m[nums2[i]] > 0) {
+        for(int i=0;i<nums1.size();i++)m[nums1[i]]++;
+        for(int i=0;i<nums2.size();i++){
+            if(m[nums2[i]]>0){
                 v.push_back(nums2[i]);
-                m[nums2[i]] = 0;
+                m[nums2[i]]=0;
             }
         }
-
         return v;
     }
 };
