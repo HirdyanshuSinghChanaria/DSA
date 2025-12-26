@@ -3,19 +3,18 @@ public:
     int bestClosingTime(string customers) {
         ios::sync_with_stdio(false);
         cin.tie(nullptr);
-        cout.tie(nullptr);
-        int size=customers.size(),n=0,y=0,maxp=0;
-        for(int i=0;i<size;i++) if(customers[i]=='Y') maxp++;
-        int temp=0,mp=maxp,idx=0;
-        for(int i=0;i<size;i++){
-            if(customers[i]=='Y') y++;
-            else n++;
-            temp=maxp-y+n;
-            if(temp<mp){
-                mp=temp;
-                idx=i+1;
+        int max_score=0;
+        int cur_score=0;
+        int best_hour=0;
+        int n = customers.size();
+        for(int i=0;i<n;i++) {
+            if(customers[i]=='Y') cur_score++;
+            else cur_score--;
+            if(cur_score>max_score) {
+                max_score = cur_score;
+                best_hour = i + 1;
             }
         }
-        return idx;
+        return best_hour;
     }
 };
