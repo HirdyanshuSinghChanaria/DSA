@@ -10,13 +10,13 @@
 
 class Solution {
 public:
+TreeNode* ans=NULL;
     TreeNode* trav(TreeNode* root,TreeNode* target){
         if(root==NULL) return NULL;
-        TreeNode* left=trav(root->left,target);
-        if(left!=NULL) return left;
-        if(root->val==target->val) return root;
-        TreeNode* right=trav(root->right,target);
-        return right;
+        trav(root->left,target);
+        if(root->val==target->val) ans=root;
+        trav(root->right,target);
+        return ans;
     }
     TreeNode* getTargetCopy(TreeNode* original, TreeNode* cloned, TreeNode* target){
         return trav(cloned,target);
