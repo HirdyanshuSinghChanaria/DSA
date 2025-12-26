@@ -1,10 +1,11 @@
 class Solution {
 public:
     int bestClosingTime(string customers) {
+        ios::sync_with_stdio(false);
+        cin.tie(nullptr);
+        cout.tie(nullptr);
         int size=customers.size(),n=0,y=0,maxp=0;
-        for(int i=0;i<size;i++){
-            if(customers[i]=='Y') maxp++;
-        }
+        for(int i=0;i<size;i++) if(customers[i]=='Y') maxp++;
         int temp=0,mp=maxp,idx=0;
         for(int i=0;i<size;i++){
             if(customers[i]=='Y') y++;
