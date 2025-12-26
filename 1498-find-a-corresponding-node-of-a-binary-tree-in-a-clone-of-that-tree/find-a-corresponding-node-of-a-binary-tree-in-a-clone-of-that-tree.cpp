@@ -11,14 +11,14 @@
 class Solution {
 public:
 TreeNode* ans=NULL;
-    TreeNode* trav(TreeNode* root,TreeNode* target){
-        if(root==NULL) return NULL;
+    void trav(TreeNode* root,TreeNode* target){
+        if(root==NULL) return ;
+        if(root->val==target->val) {ans=root;return;}
         trav(root->left,target);
-        if(root->val==target->val) ans=root;
         trav(root->right,target);
-        return ans;
     }
     TreeNode* getTargetCopy(TreeNode* original, TreeNode* cloned, TreeNode* target){
-        return trav(cloned,target);
+        trav(cloned,target);
+        return ans;
     }
 };
