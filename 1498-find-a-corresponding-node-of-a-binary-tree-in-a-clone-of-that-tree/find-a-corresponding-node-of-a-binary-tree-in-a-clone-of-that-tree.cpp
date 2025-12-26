@@ -10,15 +10,12 @@
 
 class Solution {
 public:
-TreeNode* ans=NULL;
-    void trav(TreeNode* root,TreeNode* target){
-        if(root==NULL) return ;
-        if(root->val==target->val) {ans=root;return;}
-        trav(root->left,target);
-        trav(root->right,target);
-    }
     TreeNode* getTargetCopy(TreeNode* original, TreeNode* cloned, TreeNode* target){
-        trav(cloned,target);
-        return ans;
+        if(original==NULL) return NULL;
+        if(original==target) return cloned;
+        TreeNode* left=getTargetCopy(original->left,cloned->left,target);
+        if(left!=NULL) return left;
+        TreeNode* right=getTargetCopy(original->right,cloned->right,target);
+        return right;
     }
 };
