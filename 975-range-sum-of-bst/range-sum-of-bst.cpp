@@ -11,12 +11,15 @@
  */
 class Solution {
 public:
-    int sum=0;
-    int rangeSumBST(TreeNode* root, int low, int high) {
+    int trav(TreeNode* root,int low,int high,int &sum){
         if(root==NULL) return 0;
-        rangeSumBST(root->left,low,high);
+        trav(root->left,low,high,sum);
         if(root->val>=low && root->val<=high) sum+=root->val;
-        rangeSumBST(root->right,low,high);
+        trav(root->right,low,high,sum);
         return sum;
+    }
+    int rangeSumBST(TreeNode* root, int low, int high) {
+        int sum=0;
+        return trav(root,low,high,sum);
     }
 };
