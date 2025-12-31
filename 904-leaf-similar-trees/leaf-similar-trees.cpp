@@ -21,10 +21,7 @@ public:
         vector<int>r1,r2;
         trav(root1,r1);
         trav(root2,r2);
-        if(r1.size()!=r2.size()) return false;
-        for(int i=0;i<r1.size();i++){
-            if(r1[i]!=r2[i]) return false;
-        }
+        if(r1!=r2) return false;
         return true;
     }
 };
