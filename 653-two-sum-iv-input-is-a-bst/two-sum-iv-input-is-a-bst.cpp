@@ -14,23 +14,13 @@ public:
 vector<int>temp;
     void trav(TreeNode* root){
         if(root==NULL) return;
-        queue<TreeNode*>q;
-        q.push(root);
-        while(!q.empty()){
-            int size=q.size();
-            for(int i=0;i<size;i++){
-                TreeNode* node=q.front();
-                q.pop();
-                temp.push_back(node->val);
-                if(node->left) q.push(node->left);
-                if(node->right) q.push(node->right);
-            }
-        }
+        trav(root->left);
+        temp.push_back(root->val);
+        trav(root->right);
     }
     bool findTarget(TreeNode* root, int k) {
         trav(root);
         int s=temp.size();
-        sort(temp.begin(),temp.end());
         for(int i=0;i<s;i++){
             int f=k-temp[i];
             int h=temp[i];
