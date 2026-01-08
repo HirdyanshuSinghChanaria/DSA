@@ -16,7 +16,6 @@ bool a=false;
         if(!root) return;
         queue<TreeNode*>q;
         q.push(root);
-        vector<vector<TreeNode*>>ans;
         while(!q.empty()){
             int size=q.size();
             vector<TreeNode*>temp;
@@ -52,7 +51,6 @@ bool a=false;
             }
             if((!fx && fy) || (fx && !fy)) {a=false;return;}
             else if((fx && fy) && (xpar!=ypar)){a=true; return;}
-            ans.push_back(temp);
         }
         return;
     }
