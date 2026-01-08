@@ -11,9 +11,8 @@
  */
 class Solution {
 public:
-bool a=false;
-    void trav(TreeNode* root,int x,int y){
-        if(!root) return;
+    bool isCousins(TreeNode* root, int x, int y) {
+        if(!root) return false;
         queue<TreeNode*>q;
         q.push(root);
         while(!q.empty()){
@@ -49,15 +48,10 @@ bool a=false;
                     q.push(node->right);
                 }
             }
-            if((!fx && fy) || (fx && !fy)) {a=false;return;}
-            else if((fx && fy) && (xpar!=ypar)){a=true; return;}
+            if((!fx && fy) || (fx && !fy)) {return false;}
+            else if((fx && fy) && (xpar!=ypar)){return true;}
         }
-        return;
-    }
-
-    bool isCousins(TreeNode* root, int x, int y) {
-        trav(root,x,y);
-        return a;
+        return false;
     }
 };
 // 428-59
