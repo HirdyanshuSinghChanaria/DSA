@@ -21,11 +21,12 @@ public:
         trav(root->right);
     }
     vector<int> findMode(TreeNode* root) {
+        ios::sync_with_stdio(false);
+        cin.tie(nullptr);
+        cout.tie(nullptr);
         vector<int>ans;
         trav(root);
-        for(auto it:mp){
-            if(it.second==maxfreq) ans.push_back(it.first);
-        }
+        for(auto it:mp) if(it.second==maxfreq) ans.push_back(it.first);
         return ans;
     }
 };
