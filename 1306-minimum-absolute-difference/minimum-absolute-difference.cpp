@@ -1,7 +1,9 @@
 class Solution {
 public:
     vector<vector<int>> minimumAbsDifference(vector<int>& arr) {
-        
+        ios::sync_with_stdio(false);
+        cin.tie(nullptr);
+        cout.tie(nullptr);
         int n=arr.size(),m=INT_MAX;
         sort(arr.begin(),arr.end());
         for(int i=1;i<n;i++){
