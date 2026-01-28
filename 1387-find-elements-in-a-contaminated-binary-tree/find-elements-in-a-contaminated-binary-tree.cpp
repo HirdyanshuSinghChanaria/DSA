@@ -11,28 +11,27 @@
  */
 class FindElements {
 public:
-    vector<int>v;
+    unordered_set<int>v;
     void trav(TreeNode* root){
         if(!root) return;
         if(root->left){
             root->left->val=2*root->val+1;
-            v.push_back(root->left->val);
+            v.insert(root->left->val);
             trav(root->left);
         }
         if(root->right){
             root->right->val=2*root->val+2;
-            v.push_back(root->right->val);
+            v.insert(root->right->val);
             trav(root->right);
         }
     }
     FindElements(TreeNode* root) {
         root->val=0;
-        v.push_back(0);
+        v.insert(0);
         trav(root);
-        sort(v.begin(),v.end());
     }
     bool find(int target) {
-        auto it=lower_bound(v.begin(),v.end(),target);
+        auto it=std::find(v.begin(),v.end(),target);
         if(it!=v.end() && *it==target) return true;
         else return false;
     }
