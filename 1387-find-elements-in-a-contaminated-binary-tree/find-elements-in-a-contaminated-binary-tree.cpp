@@ -31,9 +31,7 @@ public:
         trav(root);
     }
     bool find(int target) {
-        auto it=std::find(v.begin(),v.end(),target);
-        if(it!=v.end()) return true;
-        else return false;
+        return v.find(target)!=v.end();
     }
 };
 
