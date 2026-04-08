@@ -17,7 +17,7 @@ public:
                 sum=sum+hr;
             }
             if(sum<=h){
-                ans=mid;
+                ans=min(ans,mid);
                 r=mid-1;
             }
             else l=mid+1;
