@@ -1,12 +1,10 @@
 class Solution {
 public:
     string removeOuterParentheses(string s) {
+        ios::sync_with_stdio(false);cin.tie(nullptr);cout.tie(nullptr);
         int i=0,n=s.length(),j;
         string ans="";
         unordered_map<char,int>mp;
-        // while(j<n){
-
-        // }
         for(j=0;j<n;j++){
             mp[s[j]]++;
             if(mp['(']==mp[')']){
