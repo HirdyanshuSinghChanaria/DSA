@@ -1,6 +1,9 @@
 class Solution {
 public:
     string reverseWords(string s) {
+        ios::sync_with_stdio(false);
+        cin.tie(nullptr);
+        cout.tie(nullptr);
         int n=s.length();
         stack<string>st;
         string ans="",word="";
