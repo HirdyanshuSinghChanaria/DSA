@@ -3,6 +3,7 @@ public:
     int minEatingSpeed(vector<int>& piles, int h) {
         ios::sync_with_stdio(false);
         cin.tie(nullptr);
+        cout.tie(nullptr);
         int n=piles.size();
         if(h==n) return *max_element(piles.begin(),piles.end());
         int l=1,r=*max_element(piles.begin(),piles.end());
