@@ -1,6 +1,9 @@
 class Solution {
 public:
     int minimumDistance(vector<int>& nums) {
+        ios::sync_with_stdio(false);
+        cin.tie(nullptr);
+        cout.tie(nullptr);
         int m=INT_MAX;
         bool isp=false;
         for(int i=0;i<nums.size();i++){
