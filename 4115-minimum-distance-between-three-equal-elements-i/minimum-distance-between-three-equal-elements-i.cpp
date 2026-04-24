@@ -3,7 +3,7 @@ public:
     int minimumDistance(vector<int>& nums) {
         ios::sync_with_stdio(false);
         cin.tie(nullptr);
-        cout.tie(nullptr);
+        // cout.tie(nullptr);
         int ma=INT_MAX;
         unordered_map<int,vector<int>>m;
         for(int i=0;i<nums.size();i++){
